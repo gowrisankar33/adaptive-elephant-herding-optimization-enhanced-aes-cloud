@@ -1,1 +1,0 @@
-# adaptive-elephant-herding-optimization-enhanced-aes-cloud
