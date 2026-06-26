@@ -15,9 +15,7 @@
 - [Dataset](#dataset)
 - [Implementation](#implementation)
 - [Results](#results)
-- [Project Structure](#project-structure)
 - [Requirements](#requirements)
-- [How to Run](#how-to-run)
 - [References](#references)
 
 ---
@@ -251,45 +249,6 @@ The proposed AEHO-EAES method was evaluated against EDS and DVMC across five met
 
 ---
 
-## Project Structure
-
-```
-adaptive-elephant-herding-optimization-enhanced-aes-cloud/
-│
-├── data/
-│   ├── synthetic_dataset.csv        # Generated synthetic cloud workload dataset
-│   └── dataset_generator.py         # Script to regenerate the synthetic dataset
-│
-├── aeho/
-│   ├── aeho.py                      # Core AEHO algorithm
-│   ├── clan_updating_operator.py    # CUO implementation
-│   ├── separating_operator.py       # SO implementation
-│   └── fitness.py                   # Fitness evaluation (energy + task constraints)
-│
-├── eaes/
-│   ├── eaes.py                      # Enhanced AES encryption
-│   ├── key_generation.py            # Double-key generation
-│   ├── shift_operations.py          # Round-based dynamic shift rows
-│   └── hypervisor_detection.py      # Hypervisor attack monitoring
-│
-├── simulation/
-│   ├── cloud_model.py               # System model (hosts, VMs, tasks, users)
-│   ├── virtualization.py            # VM migration and hypervisor setup
-│   └── scheduler.py                 # Dynamic task scheduler (AEHO integration)
-│
-├── evaluation/
-│   ├── metrics.py                   # Time, cost, throughput, energy, reliability
-│   └── compare_baselines.py         # Comparison with EDS and DVMC
-│
-├── results/
-│   └── figures/                     # Performance comparison plots
-│
-├── requirements.txt
-└── README.md
-```
-
----
-
 ## Requirements
 
 ```
@@ -307,42 +266,6 @@ Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
-
----
-
-## How to Run
-
-### 1. Generate Synthetic Dataset
-
-```bash
-python data/dataset_generator.py
-```
-
-### 2. Run AEHO Task Scheduling
-
-```bash
-python simulation/scheduler.py --tasks 100 --vms 20 --hosts 10
-```
-
-### 3. Run EAES Security Layer
-
-```bash
-python eaes/eaes.py --keysize 128 --input data/synthetic_dataset.csv
-```
-
-### 4. Full Simulation with Evaluation
-
-```bash
-python simulation/cloud_model.py --mode full
-```
-
-### 5. Compare Against Baselines
-
-```bash
-python evaluation/compare_baselines.py
-```
-
-Results and plots will be saved in the `results/` directory.
 
 ---
 
@@ -369,7 +292,3 @@ Results and plots will be saved in the `results/` directory.
 19. Elshabka, M. A., et al. (2020). Security-aware dynamic VM consolidation. *Egyptian Informatics Journal*.
 
 ---
-
-## License
-
-This project is developed for academic research purposes.
